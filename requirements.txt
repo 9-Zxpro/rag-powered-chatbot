@@ -1,0 +1,5 @@
+Flask
+chromadb
+google-genai
+PyMuPDF
+python-dotenv
