@@ -1,0 +1,30 @@
+# Environment
+.env
+myenv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pklz
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database (local only, don’t push)
+*.sqlite3
+chroma_db/
+
+# Build /

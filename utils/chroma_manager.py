@@ -55,24 +55,22 @@ def add_to_chroma(chunks):
 #             ids=[doc_id] 
 #         )
 
+def query_chroma(query, top_k=2):
+    query_embedding = embed_query(query)
+    results= collection.query(
+        query_embeddings=[query_embedding],
+        n_results=top_k
+    )
+    return results['documents'][0]
+
 # def query_chroma(query, top_k=2, username=None):
 #     query_embedding = embed_query(query)
-#     filters = {"username": username} if username else {}
-#     results= collection.query(
-#         query_embeddings=[query_embedding],
-#         n_results=top_k,
-#         where=filters
-#     )
-#     return results['documents'][0]
-
-def query_chroma(query, top_k=2, username=None):
-    query_embedding = embed_query(query)
-    query_args = {
-        "query_embeddings": [query_embedding],
-        "n_results": top_k
-    }
-    if username:
-        query_args["where"] = {"username": {"$eq": username}}
+#     query_args = {
+#         "query_embeddings": [query_embedding],
+#         "n_results": top_k
+#     }
+#     if username:
+#         query_args["where"] = {"username": {"$eq": username}}
     
-    results = collection.query(**query_args)
-    return results['documents'][0]
+#     results = collection.query(**query_args)
+#     return results['documents'][0]

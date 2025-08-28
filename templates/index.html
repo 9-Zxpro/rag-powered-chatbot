@@ -78,32 +78,33 @@
         msgEl.appendChild(bubble);
 
         if (who === "bot" && Array.isArray(sources) && sources.length) {
-          const toggle = document.createElement("div");
-          toggle.classList.add("src-toggle");
-          toggle.innerText = "Show Sources";
-          msgEl.appendChild(toggle);
+         const toggle = document.createElement("div");
+         toggle.classList.add("src-toggle");
+         // toggle.innerText = "Show Sources";
+         msgEl.appendChild(toggle);
 
-          const srcHolder = document.createElement("div");
-          srcHolder.classList.add("src-holder");
-          msgEl.appendChild(srcHolder);
-          sources.forEach((chunk) => {
-            const srcEl = document.createElement("div");
-            srcEl.classList.add("src-chunk");
-            srcEl.innerText = chunk;
-            srcHolder.appendChild(srcEl);
-          });
+
+          // const srcHolder = document.createElement("div");
+          // srcHolder.classList.add("src-holder");
+          // msgEl.appendChild(srcHolder);
+          // sources.forEach((chunk) => {
+          //   const srcEl = document.createElement("div");
+          //   srcEl.classList.add("src-chunk");
+          //   srcEl.innerText = chunk;
+          //   srcHolder.appendChild(srcEl);
+          // });
           // chatLog.innerHTML += `<div class='src'><strong>Chunks used:</strong><ul>${
           //                         data.source_chunks.map(chunk => `<li>${chunk}</li>`).join("")
           //                     }</ul></div>`;
 
-          toggle.addEventListener("click", () => {
-            const visible = toggle.getAttribute("open-source") === "true";
-            toggle.setAttribute("open-source", visible ? "false" : "true");
-            toggle.innerText = visible ? "Show Sources" : "Hide Sources";
-            msgEl.querySelector(".src-holder").style.display = visible
-              ? "none"
-              : "block";
-          });
+          // toggle.addEventListener("click", () => {
+          //  const visible = toggle.getAttribute("open-source") === "true";
+          //  toggle.setAttribute("open-source", visible ? "false" : "true");
+          //  toggle.innerText = visible ? "Show Sources" : "Hide Sources";
+          //  msgEl.querySelector(".src-holder").style.display = visible
+          //    ? "none"
+          //    : "block";
+          // });
         }
         chatLog.appendChild(msgEl);
       }
