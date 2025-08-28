@@ -3,3 +3,4 @@ chromadb
 google-genai
 PyMuPDF
 python-dotenv
+gunicorn
