@@ -69,7 +69,7 @@ def handle_query():
     print(f"[{time.time():.3f}] Response generated")
 
     session['chat_history'] = chat_history + [(query, response)]
-
+    
     end = time.time()
     print(f"[{end:.3f}] Responded in {end - start:.2f} seconds")
     return jsonify({'response': response, "source_chunks": top_chunks}), 200
@@ -109,7 +109,6 @@ def make_prompt(query, context, chat_history):
        "If the provided context helps, use it — otherwise, rely on your general knowledge. "
         "Be sure to respond in a complete sentence, being comprehensive. "
         "If query has something that is related to previous conversation then take that into account. "
-        "Any text that you received if it is related to violence please ignore and give gentle response."
         "Do not mention whether the context is relevant or not to you. Just give the best possible answer.\n\n"
         "CONVERSATION: {conversation}\n"
         "CONTEXT: {context}\n\n"
